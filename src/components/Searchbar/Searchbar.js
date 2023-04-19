@@ -13,10 +13,10 @@ export default class Searchbar extends React.Component {
   };
 
   handleSubmit = event => {
+    event.preventDefault();
+    
     const { query } = this.state;
     const { submit } = this.props;
-
-    event.preventDefault();
 
     if (query.trim() === '') {
       Notify.failure('Введите что-то');
@@ -28,7 +28,7 @@ export default class Searchbar extends React.Component {
   render() {
     const { handleSubmit, handleNameChange } = this;
     const { query } = this.state;
-    
+
     return (
       <header class="searchbar">
         <form onSubmit={handleSubmit} class="form">

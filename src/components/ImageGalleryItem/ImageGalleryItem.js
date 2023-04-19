@@ -8,6 +8,7 @@ export default class ImageGalleryItem extends React.Component {
 
   toggleModal = () => {
     this.setState(prevState => ({ isModalOpen: !prevState.isModalOpen }));
+    
   };
 
   render() {
@@ -17,7 +18,8 @@ export default class ImageGalleryItem extends React.Component {
 
     return (
       <li class="gallery-item">
-        <img src={webformatURL} alt={tags} onClick={toggleModal} />
+        <img src={webformatURL} alt={tags} onClick={toggleModal}
+        />
         {isModalOpen && (
           <Modal
             closeModal={toggleModal}
@@ -29,6 +31,7 @@ export default class ImageGalleryItem extends React.Component {
     );
   }
 }
+
 
 ImageGalleryItem.propTypes = {
   webformatURL: PropTypes.string.isRequired,

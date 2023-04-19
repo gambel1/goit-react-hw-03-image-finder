@@ -23,21 +23,19 @@ export default class Modal extends React.Component {
   render() {
     const { closeModal, largeModalImageURL, tags } = this.props;
 
-    return (
-      createPortal(
-        <div onClick={closeModal} class="overlay">
-          <div class="modal">
-            <img src={largeModalImageURL} alt={tags} />
-          </div>
+    return createPortal(
+      <div onClick={closeModal}>
+        <div>
+          <img src={largeModalImageURL} alt={tags} />
         </div>
-      ),
+      </div>,
       modalRoot
     );
   }
 }
 
 Modal.propTypes = {
-  closeOnEsc: PropTypes.func.isRequired,
+  closeModal: PropTypes.func.isRequired,
   largeModalImageURL: PropTypes.string.isRequired,
   tags: PropTypes.string.isRequired,
 };

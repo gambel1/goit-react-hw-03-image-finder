@@ -11,6 +11,9 @@ export default async function ApiFetchGallery(query, page) {
       safesearch=true&per_page=12&page=${page}`
     )
     .then(response => response.data);
+    
 }
+
+
 
 
