@@ -1,4 +1,4 @@
-import {AppContainer} from './App.styled';
+import { AppContainer } from './App.styled';
 import Searchbar from '../Searchbar/Searchbar';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Button from '../Button/Button';
@@ -47,7 +47,7 @@ export default class App extends React.Component {
     }
   }
 
-  handleLodeMore = () => {
+  handleLoadMore = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }));
   };
 
@@ -57,12 +57,15 @@ export default class App extends React.Component {
 
   render() {
     const { images, totalHits, isLoading } = this.state;
-    const { handleQuerySubmit, handleLodeMore } = this;
+    const { handleQuerySubmit, handleLoadMore } = this;
     return (
       <AppContainer>
         <Searchbar submit={handleQuerySubmit} />
         {images && <ImageGallery images={images} />}
-        {!!totalHits && <Button onLodeMore={handleLodeMore} />}
+
+        {!isLoading && images.length > 0 && totalHits > images.length && (
+          <Button lodeMore={handleLoadMore} />
+        )}
         {isLoading && <Loader />}
       </AppContainer>
     );

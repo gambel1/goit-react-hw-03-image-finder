@@ -5,6 +5,7 @@ import {
   SearchbarBoxSpan,
   SearchbarBoxInput,
 } from './Searchbar.styled';
+import { ReactComponent as IconInput } from '../../icons/searchIcon.svg';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -41,6 +42,7 @@ export default class Searchbar extends React.Component {
         <SearchbarBoxSearchForm onSubmit={handleSubmit}>
           <SearchbarBoxButton type="submit">
             <SearchbarBoxSpan>Search</SearchbarBoxSpan>
+            <IconInput width="20px" height="20px" />
           </SearchbarBoxButton>
 
           <SearchbarBoxInput

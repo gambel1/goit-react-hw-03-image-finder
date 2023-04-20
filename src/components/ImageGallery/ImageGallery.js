@@ -1,5 +1,5 @@
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
-import {ImageGalleryUl} from './ImageGallery.styled'
+import { ImageGalleryUl } from './ImageGallery.styled';
 import PropTypes from 'prop-types';
 export default function ImageGallery({ images }) {
   return (
@@ -11,7 +11,6 @@ export default function ImageGallery({ images }) {
             webformatURL={webformatURL}
             largeImageURL={largeImageURL}
             tags={tags}
-            class="gallery-item"
           ></ImageGalleryItem>
         );
       })}
