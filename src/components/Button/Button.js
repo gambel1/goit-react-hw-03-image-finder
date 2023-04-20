@@ -1,10 +1,11 @@
+import { ButtonLodeMoreStyled } from './Button.styled';
 import PropTypes from 'prop-types';
 export default function Button({ onLodeMore }) {
-  <button onClick={onLodeMore} type="button">
+  <ButtonLodeMoreStyled onClick={onLodeMore} type="button">
     Lode More
-  </button>;
+  </ButtonLodeMoreStyled>;
 }
 
 Button.propTypes = {
-  onLodeMore: PropTypes.func.isRequired
+  onLodeMore: PropTypes.func.isRequired,
 };

@@ -1,3 +1,4 @@
+import {AppContainer} from './App.styled';
 import Searchbar from '../Searchbar/Searchbar';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Button from '../Button/Button';
@@ -58,12 +59,12 @@ export default class App extends React.Component {
     const { images, totalHits, isLoading } = this.state;
     const { handleQuerySubmit, handleLodeMore } = this;
     return (
-      <>
+      <AppContainer>
         <Searchbar submit={handleQuerySubmit} />
         {images && <ImageGallery images={images} />}
-        {!totalHits && <Button onLodeMore={handleLodeMore} />}
+        {!!totalHits && <Button onLodeMore={handleLodeMore} />}
         {isLoading && <Loader />}
-      </>
+      </AppContainer>
     );
   }
 }

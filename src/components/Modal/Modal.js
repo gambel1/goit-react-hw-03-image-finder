@@ -1,3 +1,4 @@
+import { ModalOverlayBoxDiv, ModalDiv } from './Modal.styled';
 import React from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
@@ -24,11 +25,11 @@ export default class Modal extends React.Component {
     const { closeModal, largeModalImageURL, tags } = this.props;
 
     return createPortal(
-      <div onClick={closeModal}>
-        <div>
+      <ModalOverlayBoxDiv onClick={closeModal}>
+        <ModalDiv>
           <img src={largeModalImageURL} alt={tags} />
-        </div>
-      </div>,
+        </ModalDiv>
+      </ModalOverlayBoxDiv>,
       modalRoot
     );
   }

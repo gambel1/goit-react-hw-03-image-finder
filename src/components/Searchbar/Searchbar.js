@@ -1,3 +1,10 @@
+import {
+  SearchbarBoxHeder,
+  SearchbarBoxSearchForm,
+  SearchbarBoxButton,
+  SearchbarBoxSpan,
+  SearchbarBoxInput,
+} from './Searchbar.styled';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -14,7 +21,7 @@ export default class Searchbar extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    
+
     const { query } = this.state;
     const { submit } = this.props;
 
@@ -30,23 +37,22 @@ export default class Searchbar extends React.Component {
     const { query } = this.state;
 
     return (
-      <header class="searchbar">
-        <form onSubmit={handleSubmit} class="form">
-          <button type="submit" class="button">
-            <span class="button-label">Search</span>
-          </button>
+      <SearchbarBoxHeder>
+        <SearchbarBoxSearchForm onSubmit={handleSubmit}>
+          <SearchbarBoxButton type="submit">
+            <SearchbarBoxSpan>Search</SearchbarBoxSpan>
+          </SearchbarBoxButton>
 
-          <input
+          <SearchbarBoxInput
             onChange={handleNameChange}
             value={query}
-            class="input"
             type="text"
             autocomplete="off"
             autofocus
             placeholder="Search images and photos"
           />
-        </form>
-      </header>
+        </SearchbarBoxSearchForm>
+      </SearchbarBoxHeder>
     );
   }
 }

@@ -1,4 +1,8 @@
 import Modal from '../Modal/Modal';
+import {
+  ImageGalleryItemLi,
+  ImageGalleryItemImage,
+} from './ImageGalleryItem.styled';
 import PropTypes from 'prop-types';
 
 import React from 'react';
@@ -17,8 +21,11 @@ export default class ImageGalleryItem extends React.Component {
     const { toggleModal } = this;
 
     return (
-      <li class="gallery-item">
-        <img src={webformatURL} alt={tags} onClick={toggleModal}
+      <ImageGalleryItemLi>
+        <ImageGalleryItemImage
+          src={webformatURL}
+          alt={tags}
+          onClick={toggleModal}
         />
         {isModalOpen && (
           <Modal
@@ -27,7 +34,7 @@ export default class ImageGalleryItem extends React.Component {
             tags={tags}
           />
         )}
-      </li>
+      </ImageGalleryItemLi>
     );
   }
 }

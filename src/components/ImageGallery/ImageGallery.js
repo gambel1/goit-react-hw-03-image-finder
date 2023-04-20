@@ -1,8 +1,9 @@
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
+import {ImageGalleryUl} from './ImageGallery.styled'
 import PropTypes from 'prop-types';
 export default function ImageGallery({ images }) {
   return (
-    <ul>
+    <ImageGalleryUl>
       {images.map(({ id, webformatURL, largeImageURL, tags }) => {
         return (
           <ImageGalleryItem
@@ -14,7 +15,7 @@ export default function ImageGallery({ images }) {
           ></ImageGalleryItem>
         );
       })}
-    </ul>
+    </ImageGalleryUl>
   );
 }
 
